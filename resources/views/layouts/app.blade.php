@@ -11,7 +11,8 @@
     <!-- Fonts -->
     <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet'
           type='text/css'>
-    <link href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.css" rel="stylesheet">
+    {{--<link href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.css" rel="stylesheet">--}}
+     <link href="{{ elixir('css/app.css') }}" rel="stylesheet">
 
 </head>
 
