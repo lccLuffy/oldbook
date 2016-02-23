@@ -14,13 +14,11 @@
         </div>
     </div>
 
-    <div class="row">
-        <form class="form-horizontal" role="form" method="get" action="{{route('book.search')}}">
+    <div class="row-fluid">
+        <form id="form" class="form-horizontal" role="form" method="get" action="{{route('book.search')}}">
             <div class="input-group col-xs-6" style="margin-bottom: 20px;margin-left: 50px;">
-                <input type="text" class="form-control" placeholder="查找您需要的教材名称" name="key">
-                <span class="input-group-btn">
-                        <button class="btn btn-default" type="submit">查找</button>
-                    </span>
+                <input type="text" class="form-control" placeholder="查找您需要的教材名称" id="search_key" name="key">
+                <span class="btn btn-default" onclick="onSubmit()">查找</span>
             </div>
         </form>
         @include('auth.partials.errors')
@@ -48,6 +46,4 @@
         </div>
 
     </div>
-@endsection
-@section('scripts')
 @endsection
