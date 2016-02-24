@@ -72,7 +72,7 @@ class BookFormFields extends Job
 
         return array_merge(
             $fields,
-            ['allCategories' => Category::lists('name')->all()]
+            ['allCategories' => Category::lists('name','id')->all()]
         );
     }
 
@@ -84,11 +84,7 @@ class BookFormFields extends Job
         foreach ($fieldNames as $field) {
             $fields[$field] = $book->{$field};
         }
-
-        $fields['categories'] = $book->categories()->lists('name')->all();
-
-        dd($fields);
-
+        $fields['categories'] = $book->categories->lists('id')->toArray();
         return $fields;
     }
 }

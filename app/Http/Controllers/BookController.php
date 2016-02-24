@@ -83,7 +83,6 @@ class BookController extends Controller
         $book = Book::create($request->bookFillData());
         $book->syncCategories($request->get('categories', []));
 
-
         $finalName = $user->stu_num . '_' . time() . '_' . $file->getClientOriginalName();
         $content = File::get($file->getRealPath());
 

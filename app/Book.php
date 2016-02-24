@@ -32,9 +32,7 @@ class Book extends Model
     public function syncCategories(array $categories)
     {
         if (count($categories)) {
-            $this->categories()->sync(
-                Category::whereIn('name', $categories)->lists('id')->all()
-            );
+            $this->categories()->sync($categories);
             return;
         }
 

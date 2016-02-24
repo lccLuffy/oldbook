@@ -124,9 +124,9 @@
             </label>
 
             <div class="col-md-6">
-                <select name="categories[]" id="categories" class="form-control">
-                    @foreach ($allCategories as $category)
-                        <option @if (in_array($category, $categories)) selected @endif value="{{ $category }}">
+                <select name="categories[]" id="categories" class="form-control" multiple>
+                    @foreach ($allCategories as $id=> $category)
+                        <option value="{{ $id}}" {{in_array($id,$categories) ? 'selected=selected':''}}>
                             {{ $category }}
                         </option>
                     @endforeach
@@ -139,5 +139,12 @@
             </div>
         </div>
     </div>
-
 </div>
+@section('scripts')
+<script>
+    $('#categories').select2({
+        placeholder:'选择标签',
+        tags:true
+    });
+</script>
+@endsection
